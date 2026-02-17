@@ -67,7 +67,7 @@ const sendMessage = async (message: string, image?: string) => {
 
         // 3. Network Transport
         setStatus("sending");
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
         await new Promise(r => setTimeout(r, 800));
 
         // 4. Inference (Real API Call)
@@ -115,7 +115,7 @@ We use system instructions to strictly scope the AI's persona to React technolog
       3. Your refusal message should be: "I am designed to assist only with React technology and related educational topics. Please ask me something about React!"`;
 
       const model = genAI.getGenerativeModel({
-        model: "gemini-2.5-flash",
+        model: "gemini-2.5-flash-lite",
         systemInstruction: systemInstruction
       });
 ```
