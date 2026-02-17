@@ -103,6 +103,23 @@ const sendMessage = async (message: string, image?: string) => {
 };
 ```
 
+### 3. System Instructions (Context Control)
+We use system instructions to strictly scope the AI's persona to React technology and education.
+
+```typescript
+      const systemInstruction = `You are a specialized AI assistant strictly focused on React technology education. 
+      Your purpose is to help users learn, understand, and debug React concepts, code, and ecosystem topics (like Redux, React Router, Next.js).
+      RULES:
+      1. You must ONLY answer questions related to React and frontend web development within the React context.
+      2. If a user asks about anything else (e.g., general world knowledge, other programming languages unrelated to React, cooking, history, etc.), you must politely refuse.
+      3. Your refusal message should be: "I am designed to assist only with React technology and related educational topics. Please ask me something about React!"`;
+
+      const model = genAI.getGenerativeModel({
+        model: "gemini-2.5-flash",
+        systemInstruction: systemInstruction
+      });
+```
+
 ## 🚀 Key Features
 *   **Multimodal**: Drag & drop images to chat about them.
 *   **Real-time Viz**: Watch the AI "think" step-by-step.
