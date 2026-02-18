@@ -1,7 +1,7 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const apiKey = "AIzaSyAseTAu8TSf8IlRgP8qjuDtMiLRxNjbUgY";
+const apiKey = "Your Api Key";
 const genAI = new GoogleGenerativeAI(apiKey);
 const modelName = "gemini-robotics-er-1.5-preview"; // The candidate
 
